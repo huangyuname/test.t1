@@ -1,19 +1,9 @@
 1.搭建pg的集群高可用      etcd+patroni+pg13.3+pgbouncer+callback.sh                         周日前给出
 和Prometheus+grafana(node_exporter+postgres_exporter)     +altermanager
 
-465 410 865
-QWbd9A
-
-10.248.190.116   主   
-10.248.190.117   备   
-10.248.190.118   备   server
 
 
-10.248.190.118:7001
 
-root密码：BIIpassword@123
-虚拟IP：10.248.190.119
-117、118之前装过PG集群，可以删掉
 
 
 
@@ -22,13 +12,4 @@ root密码：BIIpassword@123
 mariadb 5.7   ->   pg13.3   这两日总结出文档出来   周日前给出 
 
 
-
-
-etcd --listen-peer-urls http://192.168.117.169:2380 \
-  --listen-client-urls http://192.168.117.169:2379,http://127.0.0.1:2379 \
-  --name node1 \
-  --initial-advertise-peer-urls http://192.168.117.169:2380 \
-  --advertise-client-urls http://192.168.117.169:2379 \
-  --initial-cluster node1=http://192.168.117.169:2380,node2=http://192.168.117.170:2380,node3=http://192.168.117.171:2380 \
-  --initial-cluster-token etcd-cluster \
   --initial-cluster-state new
